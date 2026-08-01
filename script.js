@@ -1,3 +1,29 @@
+// ===== ТЕМА =====
+const toggle = document.getElementById('themeToggle');
+const tooltip = document.getElementById('themeTooltip');
+let themeTimeout;
+
+toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+        document.body.classList.remove('dark');
+        document.body.classList.add('light');
+        showTooltip('Светлая тема');
+    } else {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        showTooltip('Тёмная тема');
+    }
+});
+
+function showTooltip(text) {
+    tooltip.textContent = text;
+    tooltip.classList.add('show');
+    clearTimeout(themeTimeout);
+    themeTimeout = setTimeout(() => {
+        tooltip.classList.remove('show');
+    }, 2000);
+}
+
 // ===== ПЕЧАТАЮЩИЙСЯ СЛОГАН =====
 const slogans = [
     "🚗 Пригон авто из Грузии и Америки под ключ",
@@ -30,7 +56,16 @@ function rotateSlogan() {
 }
 rotateSlogan();
 
-// ===== ПЕЧАТАЮЩИЙСЯ ПУЗЫРЬ ПОДДЕРЖКИ =====
+// ===== МОДАЛКА ЗАКАЗА =====
+const orderModal = document.getElementById('orderModal');
+const openOrderBtn = document.getElementById('openOrderModalBtn');
+const closeBtns = document.querySelectorAll('.close');
+
+openOrderBtn.onclick = () => orderModal.style.display = 'flex';
+closeBtns.forEach(btn => btn.onclick = () => orderModal.style.display = 'none');
+window.onclick = (e) => { if (e.target === orderModal) orderModal.style.display = 'none'; };
+
+// ===== ПОДДЕРЖКА =====
 const supportMsg = "Есть вопросы? Напишите нам!";
 const bubble = document.getElementById('supportBubble');
 let supportTyped = false;
@@ -53,7 +88,6 @@ document.getElementById('supportCircle').addEventListener('click', () => {
     window.open('https://t.me/Ivanka58', '_blank');
 });
 
-// Показываем поддержку при скролле
 window.addEventListener('scroll', () => {
     const el = document.getElementById('supportCircle');
     const scrollY = window.scrollY;
@@ -67,38 +101,6 @@ window.addEventListener('scroll', () => {
         el.style.display = 'none';
     }
 });
-
-// ===== МОДАЛКИ =====
-const modal = document.getElementById('carModal');
-const closeBtn = document.querySelector('.close');
-closeBtn.onclick = () => modal.style.display = 'none';
-window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
-
-function openCarModal(img, title, desc) {
-    document.getElementById('modalCarImg').src = img;
-    document.getElementById('modalCarTitle').innerText = title;
-    document.getElementById('modalCarDesc').innerHTML = desc;
-    modal.style.display = 'flex';
-}
-
-// ===== КАЛЬКУЛЯТОР =====
-const budgetSlider = document.getElementById('calcBudget');
-const budgetDisplay = document.getElementById('budgetDisplay');
-const calcPrice = document.getElementById('calcPrice');
-
-budgetSlider.addEventListener('input', () => {
-    const val = parseInt(budgetSlider.value);
-    budgetDisplay.innerText = val.toLocaleString() + ' ₽';
-    const country = document.getElementById('calcCountry').value;
-    let multiplier = country === 'georgia' ? 1.0 : 1.3;
-    let price = Math.round(val * multiplier / 500000) * 500000;
-    calcPrice.innerText = 'от ' + price.toLocaleString() + ' ₽';
-});
-
-document.getElementById('calcCountry').addEventListener('change', () => {
-    budgetSlider.dispatchEvent(new Event('input'));
-});
-budgetSlider.dispatchEvent(new Event('input'));
 
 // ===== КАРУСЕЛЬ =====
 const track = document.getElementById('carouselTrack');
@@ -116,10 +118,9 @@ function getCardsPerView() {
 
 function renderCars() {
     track.innerHTML = '';
-    carsData.forEach((car, index) => {
+    carsData.forEach((car) => {
         const card = document.createElement('div');
         card.className = 'car-card';
-        card.setAttribute('data-index', index);
         card.innerHTML = `
             <img src="${car.img}" alt="${car.name}" onerror="this.src='car-placeholder.png'">
             <div class="car-card-body">
@@ -149,26 +150,14 @@ function updateCarousel() {
 }
 
 prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
+    if (currentIndex > 0) { currentIndex--; updateCarousel(); }
 });
 
 nextBtn.addEventListener('click', () => {
     const totalCards = carsData.length;
     const maxIndex = Math.max(0, totalCards - cardsPerView);
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateCarousel();
-    }
+    if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
 });
 
-window.addEventListener('resize', () => {
-    updateCarousel();
-});
-
-// ===== ЗАПУСК =====
+window.addEventListener('resize', updateCarousel);
 renderCars();
-
-console.log("🚀 AutoBridge — сайт готов к работе!");
