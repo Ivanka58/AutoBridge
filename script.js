@@ -1,29 +1,3 @@
-// ===== ТЕМА =====
-const toggle = document.getElementById('themeToggle');
-const tooltip = document.getElementById('themeTooltip');
-let themeTimeout;
-
-toggle.addEventListener('change', () => {
-    if (toggle.checked) {
-        document.body.classList.remove('dark');
-        document.body.classList.add('light');
-        showTooltip('Светлая тема');
-    } else {
-        document.body.classList.remove('light');
-        document.body.classList.add('dark');
-        showTooltip('Тёмная тема');
-    }
-});
-
-function showTooltip(text) {
-    tooltip.textContent = text;
-    tooltip.classList.add('show');
-    clearTimeout(themeTimeout);
-    themeTimeout = setTimeout(() => {
-        tooltip.classList.remove('show');
-    }, 2000);
-}
-
 // ===== ПЕЧАТАЮЩИЙСЯ СЛОГАН =====
 const slogans = [
     "🚗 Пригон авто из Грузии и Америки под ключ",
