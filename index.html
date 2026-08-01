@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>AutoBridge — пригон авто из Грузии и Америки под ключ</title>
+    <title>SkyWayAuto — пригон авто из Грузии и Америки под ключ</title>
     <meta name="description" content="Пригон автомобилей из Грузии и США под ключ. Подбор, проверка, растаможка, оформление документов. Доставка по ДНР, ЛНР, Крыму, России и СНГ. Звоните!">
 
     <link rel="icon" type="image/png" href="logo.png">
 
-    <meta property="og:title" content="AutoBridge — пригон авто из Грузии и Америки">
+    <meta property="og:title" content="SkyWayAuto — пригон авто из Грузии и Америки">
     <meta property="og:description" content="Пригон автомобилей под ключ. Доставка по ДНР, ЛНР, Крыму и всей России. Звоните!">
-    <meta property="og:image" content="https://autobridge.shop/logo.png">
+    <meta property="og:image" content="https://skywayauto.shop/logo.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://autobridge.shop">
+    <meta property="og:url" content="https://skywayauto.shop">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- Переключатель тем -->
+    <div class="theme-switcher">
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider round"></span>
+        </label>
+        <div class="theme-tooltip" id="themeTooltip">Тёмная тема</div>
+    </div>
+
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-icon">
-                    <img src="logo.png" alt="AutoBridge" class="main-logo">
+                    <img src="logo.png" alt="SkyWayAuto" class="main-logo">
                 </div>
                 <h1 class="hero-title">Пригон авто <span>из Грузии и Америки</span></h1>
                 <div class="slogan-rotator">
@@ -41,17 +50,13 @@
                 </div>
                 <div class="order-block">
                     <div class="price-min">Цена: от 1 500 000 ₽</div>
-                    <a href="tel:+79494010811" class="btn btn-primary">📞 Оформить заказ</a>
-                    <div class="phone-link-block">
-                        <a href="tel:+79494010811" class="phone-link">+7 949 401 08 11</a>
-                        <span class="phone-hint">Нажмите, чтобы позвонить</span>
-                    </div>
+                    <button class="btn btn-primary" id="openOrderModalBtn">📞 Оформить заказ</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== УСЛУГИ ===================== -->
+    <!-- ===== УСЛУГИ ===== -->
     <section class="services">
         <div class="container">
             <h2 class="section-title">Услуги <span>под ключ</span></h2>
@@ -66,7 +71,7 @@
         </div>
     </section>
 
-    <!-- ===================== КАТАЛОГ МАШИН ===================== -->
+    <!-- ===== КАТАЛОГ МАШИН ===== -->
     <section class="cars" id="cars">
         <div class="container">
             <h2 class="section-title">Автомобили <span>в наличии</span></h2>
@@ -75,14 +80,12 @@
             <div class="carousel-wrapper">
                 <button class="carousel-btn prev" id="prevBtn">‹</button>
                 <div class="carousel-container" id="carouselContainer">
-                    <div class="carousel-track" id="carouselTrack">
-                        <!-- Сюда JS вставит карточки -->
-                    </div>
+                    <div class="carousel-track" id="carouselTrack"></div>
                 </div>
                 <button class="carousel-btn next" id="nextBtn">›</button>
             </div>
 
-            <!-- Блок "Пригоним под заказ" (после всех машин) -->
+            <!-- Блок "Пригоним под заказ" -->
             <div class="order-custom" id="orderCustom">
                 <div class="order-custom-content">
                     <span class="order-icon">🚀</span>
@@ -90,92 +93,73 @@
                     <p>Под заказ от 5 дней. Полная проверка, растаможка, документы.</p>
                     <div class="order-custom-contacts">
                         <a href="tel:+79494010811" class="btn btn-primary">📞 Позвонить</a>
-                        <a href="https://t.me/ZaharSok" target="_blank" class="btn btn-secondary">✈️ Написать в Telegram</a>
+                        <a href="https://t.me/ZaharSok" target="_blank" class="btn btn-secondary">✈️ Telegram</a>
+                        <a href="https://wa.me/79494010811" target="_blank" class="btn btn-secondary whatsapp">💬 WhatsApp</a>
+                        <a href="#" class="btn btn-secondary vk-btn">📘 VK</a>
                     </div>
-                </div>
-            </div>
-
-            <p class="cars-note">* Машины в Грузии и США — под заказ. Срок пригона от 5 дней.</p>
-        </div>
-    </section>
-
-    <!-- ===================== КАЛЬКУЛЯТОР ===================== -->
-    <section class="calculator">
-        <div class="container">
-            <h2 class="section-title">Калькулятор <span>стоимости</span></h2>
-            <div class="calc-block">
-                <div class="calc-group">
-                    <label>Страна пригона</label>
-                    <select id="calcCountry">
-                        <option value="georgia">🇬🇪 Грузия</option>
-                        <option value="usa">🇺🇸 Америка</option>
-                    </select>
-                </div>
-                <div class="calc-group">
-                    <label>Бюджет (₽)</label>
-                    <input type="range" id="calcBudget" min="1500000" max="10000000" step="500000" value="3000000">
-                    <div class="calc-range-labels">
-                        <span>1 500 000 ₽</span>
-                        <span id="budgetDisplay">3 000 000 ₽</span>
-                        <span>10 000 000 ₽</span>
-                    </div>
-                </div>
-                <div class="calc-result" id="calcResult">
-                    <p>Примерная стоимость: <strong id="calcPrice">от 3 000 000 ₽</strong></p>
-                    <p class="calc-hint">* Точная цена рассчитывается индивидуально</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== ГЕОГРАФИЯ ДОСТАВКИ ===================== -->
+    <!-- ===== ГЕОГРАФИЯ ===== -->
     <section class="geo">
         <div class="container">
             <h2 class="section-title">География <span>доставки</span></h2>
             <div class="geo-main">
-                <span>Донецк</span> <span>ДНР</span> <span>Макеевка</span>
-                <span>Луганск</span> <span>ЛНР</span> <span>Крым</span>
+                <span>🇷🇺 Донецк</span> <span>🇷🇺 ДНР</span> <span>🇷🇺 Макеевка</span>
+                <span>🇷🇺 Луганск</span> <span>🇷🇺 ЛНР</span> <span>🇷🇺 Крым</span>
             </div>
-            <div class="geo-russia">🇷🇺 Россия</div>
+            <div class="geo-russia">🇷🇺 И по всей России!</div>
             <div class="geo-countries">
-                <span>🇦🇿 Азербайджан</span> <span>🇦🇲 Армения</span> <span>🇧🇾 Беларусь</span>
-                <span>🇰🇿 Казахстан</span> <span>🇰🇬 Кыргызстан</span> <span>🇹🇯 Таджикистан</span>
-                <span>🇺🇿 Узбекистан</span> <span>🇲🇩 Молдова</span>
+                <span>🇦🇿 Азербайджан</span>
+                <span>🇦🇲 Армения</span>
+                <span>🇧🇾 Беларусь</span>
+                <span>🇰🇿 Казахстан</span>
+                <span>🇰🇬 Кыргызстан</span>
+                <span>🇹🇯 Таджикистан</span>
+                <span>🇺🇿 Узбекистан</span>
+                <span>🇲🇩 Молдова</span>
             </div>
         </div>
     </section>
 
-    <!-- ===================== ФУТЕР ===================== -->
+    <!-- ===== ФУТЕР ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-icons">
-                <a href="tel:+79494010811" class="footer-icon" title="Позвонить">📞</a>
                 <a href="https://t.me/ZaharSok" target="_blank" class="footer-icon" title="Telegram">
                     <img src="logotg.svg" alt="Telegram" class="social-logo">
                 </a>
-                <a href="#" class="footer-icon" title="ВК (скоро)">
-                    <img src="logovk.svg" alt="ВКонтакте" class="social-logo">
+                <a href="#" class="footer-icon" title="VK">
+                    <img src="logovk.svg" alt="VK" class="social-logo">
+                </a>
+                <a href="https://wa.me/79494010811" target="_blank" class="footer-icon" title="WhatsApp">
+                    <img src="logowp.svg" alt="WhatsApp" class="social-logo">
                 </a>
                 <a href="https://t.me/Ivanka58" target="_blank" class="footer-icon" title="Техподдержка">🎧</a>
             </div>
             <p class="footer-phone">+7 949 401 08 11</p>
-            <p class="small">© AutoBridge — пригон авто из Грузии и Америки под ключ</p>
+            <p class="small">© SkyWayAuto — пригон авто из Грузии и Америки под ключ</p>
         </div>
     </footer>
 
-    <!-- ===================== МОДАЛКИ ===================== -->
-    <div id="carModal" class="modal">
+    <!-- ===== МОДАЛКИ ===== -->
+    <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img id="modalCarImg" src="" alt="Car" style="width:100%;border-radius:20px;margin-bottom:15px;">
-            <h3 id="modalCarTitle"></h3>
-            <p id="modalCarDesc"></p>
-            <a href="tel:+79494010811" class="btn btn-primary" style="margin-top:15px;">📞 Узнать цену</a>
+            <h3>🚗 Связаться с нами</h3>
+            <div class="modal-buttons">
+                <a href="tel:+79494010811" class="modal-option phone">📞 +7 949 401 08 11</a>
+                <a href="https://t.me/ZaharSok" target="_blank" class="modal-option telegram">✈️ Telegram</a>
+                <a href="https://wa.me/79494010811" target="_blank" class="modal-option whatsapp">💬 WhatsApp</a>
+                <a href="#" class="modal-option vk">📘 VK</a>
+            </div>
         </div>
     </div>
 
     <div id="supportCircle" class="support-circle">
-        <div class="support-bubble" id="supportBubble">Возникли вопросы? Напишите нам!</div>
+        <div class="support-bubble" id="supportBubble">Есть вопросы? Напишите нам!</div>
         <div class="support-icon">🎧</div>
     </div>
 
