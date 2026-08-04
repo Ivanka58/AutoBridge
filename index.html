@@ -1,182 +1,335 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>SkyWayAuto — пригон авто из Грузии и Америки под ключ</title>
-    <meta name="description" content="Пригон автомобилей из Грузии и США под ключ. Подбор, проверка, растаможка, оформление документов. Доставка по ДНР, ЛНР, Крыму, России и СНГ. Звоните!">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>SkyWayAuto — пригон авто из Грузии и Америки под ключ</title>
+<meta name="description" content="Пригон автомобилей из Грузии и США под ключ. Подбор, проверка, растаможка, оформление документов. Доставка по ДНР, ЛНР, Крыму, России и СНГ. Звоните!">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="shortcut icon" type="image/png" href="logo.png">
 
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" type="image/png" href="logo.png">
+<meta property="og:title" content="SkyWayAuto — пригон авто из Грузии и Америки">
+<meta property="og:description" content="Пригон автомобилей под ключ. Доставка по ДНР, ЛНР, Крыму и всей России. Звоните!">
+<meta property="og:image" content="https://skywayauto.shop/logo.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skywayauto.shop">
 
-    <meta property="og:title" content="SkyWayAuto — пригон авто из Грузии и Америки">
-    <meta property="og:description" content="Пригон автомобилей под ключ. Доставка по ДНР, ЛНР, Крыму и всей России. Звоните!">
-    <meta property="og:image" content="https://skywayauto.shop/logo.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://skywayauto.shop">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SkyWayAuto",
+  "url": "https://skywayauto.shop",
+  "logo": "https://skywayauto.shop/logo.png",
+  "description": "Пригон авто из Грузии и Америки под ключ",
+  "telephone": "+79494010811",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Донецк",
+    "addressCountry": "RU"
+  },
+  "sameAs": [
+    "https://t.me/ZaharSok",
+    "https://vk.ru/sahar454"
+  ]
+}
+</script>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SkyWayAuto",
-        "url": "https://skywayauto.shop",
-        "logo": "https://skywayauto.shop/logo.png",
-        "description": "Пригон авто из Грузии и Америки под ключ",
-        "telephone": "+79494010811",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Донецк",
-            "addressCountry": "RU"
-        },
-        "sameAs": [
-            "https://t.me/ZaharSok",
-            "https://vk.ru/sahar454"
-        ]
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800;900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon">
-                    <img src="logo.png" alt="SkyWayAuto" class="main-logo">
-                </div>
-                <h1 class="hero-title">Пригон авто <span>из Грузии и Америки</span></h1>
-                <div class="slogan-rotator">
-                    <div class="slogan-text" id="typingSlogan"></div>
-                </div>
-                <div class="features-badge">
-                    <div class="feature-card">🔍 Подбор авто</div>
-                    <div class="feature-card">🛠️ Проверка</div>
-                    <div class="feature-card">📄 Растаможка</div>
-                    <div class="feature-card">📋 Оформление</div>
-                    <div class="feature-card">🚛 Доставка по РФ</div>
-                </div>
-                <div class="order-block">
-                    <div class="price-min">Цена: от 1 500 000 ₽</div>
-                    <button class="btn btn-primary" id="openOrderModalBtn">📞 Оформить заказ</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== ШАПКА ===== -->
+<header class="nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <img src="logo.png" alt="SkyWayAuto" class="brand-logo">
+      <span class="brand-text">SkyWay<span>Auto</span></span>
+    </a>
 
-    <!-- ===== УСЛУГИ ===== -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Услуги <span>под ключ</span></h2>
-            <div class="services-grid">
-                <div class="service-card"><span>🔍</span><h3>Подбор авто</h3><p>Подберём авто под ваш бюджет и пожелания</p></div>
-                <div class="service-card"><span>🛠️</span><h3>Автопроверка</h3><p>Полная диагностика перед покупкой</p></div>
-                <div class="service-card"><span>📄</span><h3>Растаможка</h3><p>Оформление всех таможенных документов</p></div>
-                <div class="service-card"><span>📋</span><h3>Оформление</h3><p>Полный пакет документов для постановки на учёт</p></div>
-                <div class="service-card"><span>🚛</span><h3>Доставка</h3><p>По всей России и странам СНГ</p></div>
-                <div class="service-card"><span>🔧</span><h3>Диагностика</h3><p>Проверка всех узлов и агрегатов</p></div>
-            </div>
-        </div>
-    </section>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#cars" class="nav-link">Каталог</a>
+      <a href="#process" class="nav-link">Как это работает</a>
+      <a href="#geo" class="nav-link">География</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+    </nav>
 
-    <!-- ===== КАТАЛОГ МАШИН ===== -->
-    <section class="cars" id="cars">
-        <div class="container">
-            <h2 class="section-title">Автомобили <span>в наличии</span></h2>
-            <p class="cars-subtitle">🔥 Актуальные предложения — звоните, пока не продали!</p>
-            
-            <div class="carousel-wrapper">
-                <button class="carousel-btn prev" id="prevBtn">‹</button>
-                <div class="carousel-container" id="carouselContainer">
-                    <div class="carousel-track" id="carouselTrack"></div>
-                </div>
-                <button class="carousel-btn next" id="nextBtn">›</button>
-            </div>
+    <div class="nav-actions">
+      <a href="tel:+79494010811" class="nav-phone">+7&nbsp;949&nbsp;401‑08‑11</a>
+      <button class="btn btn-primary btn-sm" id="navOrderBtn">Оформить заказ</button>
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#services">Услуги</a>
+    <a href="#cars">Каталог</a>
+    <a href="#process">Как это работает</a>
+    <a href="#geo">География</a>
+    <a href="#contacts">Контакты</a>
+    <a href="tel:+79494010811" class="nav-mobile-phone">📞 +7 949 401‑08‑11</a>
+  </div>
+</header>
 
-            <!-- Блок "Пригоним под заказ" -->
-            <div class="order-custom" id="orderCustom">
-                <div class="order-custom-content">
-                    <span class="order-icon">🚀</span>
-                    <h3>Пригоним любые машины из Грузии и США</h3>
-                    <p>Под заказ от 5 дней. Полная проверка, растаможка, документы.</p>
-                    <div class="order-custom-contacts">
-                        <a href="tel:+79494010811" class="btn btn-primary">📞 Позвонить</a>
-                        <a href="https://t.me/ZaharSok" target="_blank" class="btn btn-secondary">✈️ Telegram</a>
-                        <a href="https://wa.me/79897242348" target="_blank" class="btn btn-secondary whatsapp">💬 WhatsApp</a>
-                        <a href="https://vk.ru/sahar454" target="_blank" class="btn btn-secondary vk-btn">📘 VK</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <svg class="route-svg" viewBox="0 0 1200 500" preserveAspectRatio="none">
+      <path class="route-path" d="M -40,380 C 220,220 380,460 560,300 S 900,140 1260,220" />
+      <circle class="route-dot" r="5" />
+    </svg>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-content" data-reveal>
+      <span class="eyebrow">🚗 Пригон под ключ · Грузия · США</span>
+      <h1 class="hero-title">Пригон авто <span>из Грузии и Америки</span></h1>
 
-    <!-- ===== ГЕОГРАФИЯ ===== -->
-    <section class="geo">
-        <div class="container">
-            <h2 class="section-title">География <span>доставки</span></h2>
-            <div class="geo-main">
-                <span>🇷🇺 Донецк</span> <span>🇷🇺 ДНР</span> <span>🇷🇺 Макеевка</span>
-                <span>🇷🇺 Луганск</span> <span>🇷🇺 ЛНР</span> <span>🇷🇺 Крым</span>
-            </div>
-            <div class="geo-russia">🇷🇺 И по всей России!</div>
-            <div class="geo-countries">
-                <span>🇦🇿 Азербайджан</span>
-                <span>🇦🇲 Армения</span>
-                <span>🇧🇾 Беларусь</span>
-                <span>🇰🇿 Казахстан</span>
-                <span>🇰🇬 Кыргызстан</span>
-                <span>🇹🇯 Таджикистан</span>
-                <span>🇺🇿 Узбекистан</span>
-                <span>🇲🇩 Молдова</span>
-            </div>
-        </div>
-    </section>
+      <div class="slogan-rotator">
+        <p class="slogan-text" id="typingSlogan"></p>
+      </div>
 
-    <!-- ===== ФУТЕР ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-icons">
-                <a href="https://t.me/ZaharSok" target="_blank" class="footer-icon" title="Telegram">
-                    <img src="logotg.svg" alt="Telegram" class="social-logo">
-                </a>
-                <a href="https://vk.ru/sahar454" target="_blank" class="footer-icon" title="VK">
-                    <img src="logovk.svg" alt="VK" class="social-logo">
-                </a>
-                <a href="https://wa.me/79897242348" target="_blank" class="footer-icon" title="WhatsApp">
-                    <img src="logowp.svg" alt="WhatsApp" class="social-logo">
-                </a>
-                <a href="https://t.me/Ivanka58" target="_blank" class="footer-icon" title="Техподдержка">🎧</a>
-            </div>
-            <p class="footer-phone">+7 949 401 08 11</p>
-            <p class="small">© SkyWayAuto — пригон авто из Грузии и Америки под ключ</p>
-        </div>
-    </footer>
+      <div class="features-badge">
+        <div class="feature-card">🔍 Подбор авто</div>
+        <div class="feature-card">🛠️ Проверка</div>
+        <div class="feature-card">📄 Растаможка</div>
+        <div class="feature-card">📋 Оформление</div>
+        <div class="feature-card">🚛 Доставка по РФ</div>
+      </div>
 
-    <!-- ===== МОДАЛКИ ===== -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>🚗 Связаться с нами</h3>
-            <div class="modal-buttons">
-                <a href="tel:+79494010811" class="modal-option phone">📞 +7 949 401 08 11</a>
-                <a href="https://t.me/ZaharSok" target="_blank" class="modal-option telegram">✈️ Telegram</a>
-                <a href="https://wa.me/79897242348" target="_blank" class="modal-option whatsapp">💬 WhatsApp</a>
-                <a href="https://vk.ru/sahar454" target="_blank" class="modal-option vk">📘 VK</a>
-            </div>
+      <div class="order-block">
+        <div class="price-min"><span>Цена под ключ от</span>1 500 000 ₽</div>
+        <button class="btn btn-primary btn-lg" id="openOrderModalBtn">📞 Оформить заказ</button>
+        <div class="order-sub">Отвечаем моментально в Telegram и WhatsApp</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ===== БЕГУЩАЯ СТРОКА МАРШРУТА ===== -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">🇬🇪 Грузия</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🇺🇸 США</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🚢 Доставка морем и своим ходом</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🛃 Растаможка под ключ</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">📄 Полный пакет документов</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🇷🇺 Донецк · ДНР · ЛНР · Крым · Россия</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🇬🇪 Грузия</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🇺🇸 США</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🚢 Доставка морем и своим ходом</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🛃 Растаможка под ключ</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">📄 Полный пакет документов</span>
+    <span class="marquee-sep">✦</span>
+    <span class="marquee-item">🇷🇺 Донецк · ДНР · ЛНР · Крым · Россия</span>
+    <span class="marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- ===== УСЛУГИ ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <span class="eyebrow center">Полный цикл — от заявки до ключей в руках</span>
+    <h2 class="section-title" data-reveal>Услуги <span>под ключ</span></h2>
+
+    <div class="services-grid">
+      <div class="service-card" data-reveal><span class="service-icon">🔍</span><h3>Подбор авто</h3><p>Подберём автомобиль под ваш бюджет, задачи и пожелания — по фото, видео и отчётам с аукционов</p></div>
+      <div class="service-card" data-reveal><span class="service-icon">🛠️</span><h3>Автопроверка</h3><p>Полная диагностика и проверка юридической чистоты перед покупкой</p></div>
+      <div class="service-card" data-reveal><span class="service-icon">📄</span><h3>Растаможка</h3><p>Берём на себя все таможенные процедуры и платежи — без вашего участия</p></div>
+      <div class="service-card" data-reveal><span class="service-icon">📋</span><h3>Оформление</h3><p>Полный пакет документов для постановки на учёт</p></div>
+      <div class="service-card" data-reveal><span class="service-icon">🚛</span><h3>Доставка</h3><p>По всей России, ДНР, ЛНР, Крыму и странам СНГ — до двери</p></div>
+      <div class="service-card" data-reveal><span class="service-icon">🔧</span><h3>Диагностика</h3><p>Проверка всех узлов и агрегатов перед передачей клиенту</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КАК ЭТО РАБОТАЕТ ===== -->
+<section class="process" id="process">
+  <div class="container">
+    <span class="eyebrow center">Пять шагов до вашего автомобиля</span>
+    <h2 class="section-title" data-reveal>Как проходит <span>пригон</span></h2>
+
+    <div class="process-line" id="processLine">
+      <div class="process-progress" id="processProgress"></div>
+
+      <div class="process-step" data-reveal>
+        <div class="step-num">01</div>
+        <h3>Заявка</h3>
+        <p>Оставляете заявку по телефону, в Telegram или WhatsApp — обсуждаем бюджет и пожелания</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="step-num">02</div>
+        <h3>Подбор и проверка</h3>
+        <p>Находим варианты в Грузии и США, проверяем историю, документы и техническое состояние</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="step-num">03</div>
+        <h3>Покупка и доставка</h3>
+        <p>Выкупаем автомобиль и организуем доставку морем или своим ходом</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="step-num">04</div>
+        <h3>Растаможка</h3>
+        <p>Оформляем все таможенные процедуры и документы под ключ</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="step-num">05</div>
+        <h3>Передача авто</h3>
+        <p>Доставляем автомобиль в Донецк, ДНР, ЛНР, Крым или любой регион России</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КАТАЛОГ МАШИН ===== -->
+<section class="cars" id="cars">
+  <div class="container">
+    <span class="eyebrow center">Уже проверены, оформлены и готовы к выезду</span>
+    <h2 class="section-title" data-reveal>Автомобили <span>в наличии</span></h2>
+    <p class="cars-subtitle" data-reveal>🔥 <span id="carsCount">5</span> авто в наличии прямо сейчас — звоните, пока не продали!</p>
+
+    <div class="cars-filter" id="carsFilter" data-reveal></div>
+
+    <div class="cars-grid" id="carsGrid"></div>
+
+    <!-- Блок "Пригоним под заказ" -->
+    <div class="order-custom" id="orderCustom" data-reveal>
+      <div class="order-custom-content">
+        <span class="order-icon">🚀</span>
+        <h3>Пригоним любые машины из Грузии и США</h3>
+        <p>Под заказ от 5 дней. Полная проверка, растаможка, документы.</p>
+        <div class="order-custom-contacts">
+          <a href="tel:+79494010811" class="btn btn-primary">📞 Позвонить</a>
+          <a href="https://t.me/ZaharSok" target="_blank" rel="noopener" class="btn btn-secondary">✈️ Telegram</a>
+          <a href="https://wa.me/79897242348" target="_blank" rel="noopener" class="btn btn-secondary whatsapp">💬 WhatsApp</a>
+          <a href="https://vk.ru/sahar454" target="_blank" rel="noopener" class="btn btn-secondary vk-btn">📘 VK</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ГЕОГРАФИЯ ===== -->
+<section class="geo" id="geo">
+  <div class="container">
+    <span class="eyebrow center">Откуда и куда</span>
+    <h2 class="section-title" data-reveal>География <span>доставки</span></h2>
+
+    <div class="geo-route" data-reveal>
+      <div class="geo-from">
+        <span class="geo-label">Пригоняем из</span>
+        <div class="geo-from-flags"><span>🇬🇪 Грузия</span><span>🇺🇸 США</span></div>
+      </div>
+      <div class="geo-arrow">
+        <svg viewBox="0 0 120 24" class="geo-arrow-svg"><path d="M0,12 H108" /><path d="M96,2 L112,12 L96,22" /></svg>
+      </div>
+      <div class="geo-to">
+        <span class="geo-label">Доставляем в</span>
+        <div class="geo-main">
+          <span>Донецк</span><span>ДНР</span><span>Макеевка</span>
+          <span>Луганск</span><span>ЛНР</span><span>Крым</span>
+        </div>
+      </div>
     </div>
 
-    <div id="supportCircle" class="support-circle">
-        <div class="support-bubble" id="supportBubble">Есть вопросы? Напишите нам!</div>
-        <div class="support-icon">🎧</div>
+    <div class="geo-russia" data-reveal>🇷🇺 И по всей России!</div>
+
+    <div class="geo-countries" data-reveal>
+      <span>🇦🇿 Азербайджан</span>
+      <span>🇦🇲 Армения</span>
+      <span>🇧🇾 Беларусь</span>
+      <span>🇰🇿 Казахстан</span>
+      <span>🇰🇬 Кыргызстан</span>
+      <span>🇹🇯 Таджикистан</span>
+      <span>🇺🇿 Узбекистан</span>
+      <span>🇲🇩 Молдова</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ФУТЕР ===== -->
+<footer class="footer" id="contacts">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand footer-brand-logo">
+        <img src="logo.png" alt="SkyWayAuto" class="brand-logo">
+        <span class="brand-text">SkyWay<span>Auto</span></span>
+      </a>
+      <p>Пригон автомобилей из Грузии и Америки под ключ: подбор, проверка, растаможка, документы, доставка по России и СНГ.</p>
+      <div class="footer-icons">
+        <a href="https://t.me/ZaharSok" target="_blank" rel="noopener" class="footer-icon" title="Telegram">
+          <img src="logotg.svg" alt="Telegram" class="social-logo">
+        </a>
+        <a href="https://vk.ru/sahar454" target="_blank" rel="noopener" class="footer-icon" title="VK">
+          <img src="logovk.svg" alt="VK" class="social-logo">
+        </a>
+        <a href="https://wa.me/79897242348" target="_blank" rel="noopener" class="footer-icon" title="WhatsApp">
+          <img src="logowp.svg" alt="WhatsApp" class="social-logo">
+        </a>
+        <a href="https://t.me/Ivanka58" target="_blank" rel="noopener" class="footer-icon" title="Техподдержка">🎧</a>
+      </div>
     </div>
 
-    <script src="cars.js"></script>
-    <script src="script.js"></script>
+    <div class="footer-col">
+      <h5>Навигация</h5>
+      <a href="#services">Услуги</a>
+      <a href="#cars">Каталог авто</a>
+      <a href="#process">Как это работает</a>
+      <a href="#geo">География</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Связь</h5>
+      <a href="tel:+79494010811" class="footer-phone">+7 949 401 08 11</a>
+      <a href="https://t.me/ZaharSok" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://wa.me/79897242348" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://vk.ru/sahar454" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="small">© SkyWayAuto — пригон авто из Грузии и Америки под ключ</p>
+  </div>
+</footer>
+
+<!-- ===== МОДАЛКА ===== -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>🚗 Связаться с нами</h3>
+    <div class="modal-buttons">
+      <a href="tel:+79494010811" class="modal-option phone">📞 +7 949 401 08 11</a>
+      <a href="https://t.me/ZaharSok" target="_blank" rel="noopener" class="modal-option telegram">✈️ Telegram</a>
+      <a href="https://wa.me/79897242348" target="_blank" rel="noopener" class="modal-option whatsapp">💬 WhatsApp</a>
+      <a href="https://vk.ru/sahar454" target="_blank" rel="noopener" class="modal-option vk">📘 VK</a>
+    </div>
+  </div>
+</div>
+
+<div id="supportCircle" class="support-circle">
+  <div class="support-bubble" id="supportBubble">Есть вопросы? Напишите нам!</div>
+  <div class="support-icon">🎧</div>
+</div>
+
+<script src="cars.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
