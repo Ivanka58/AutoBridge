@@ -40,7 +40,11 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   font-family: var(--font-body);
@@ -48,6 +52,8 @@ body {
   color: var(--text);
   line-height: 1.55;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -64,11 +70,18 @@ body::before {
     var(--bg);
 }
 
-.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
 a { color: inherit; }
 
-img { max-width: 100%; }
+img, svg { max-width: 100%; }
+
+/* защита от переполнения по горизонтали для flex/grid-контейнеров */
+.nav-inner, .nav-actions, .hero-inner, .footer-grid, .geo-route,
+.services-grid, .cars-grid, .process-line {
+  min-width: 0;
+}
+.nav-inner > *, .nav-actions > * { min-width: 0; }
 
 ::selection { background: rgba(201,162,76,0.35); color: #fff; }
 
@@ -126,6 +139,7 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  max-width: 100%;
   border: none;
   font-family: var(--font-body);
   font-weight: 700;
@@ -135,7 +149,8 @@ a:focus-visible, button:focus-visible {
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease);
   text-decoration: none;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--gold), var(--gold-deep));
@@ -180,6 +195,7 @@ a:focus-visible, button:focus-visible {
   gap: 20px;
   padding: 16px 24px;
   transition: padding 0.3s var(--ease);
+  flex-wrap: nowrap;
 }
 .nav.scrolled .nav-inner { padding: 11px 24px; }
 
@@ -612,6 +628,13 @@ a:focus-visible, button:focus-visible {
   .footer-brand { grid-column: 1 / -1; }
   .process-line { grid-template-columns: repeat(3, 1fr); row-gap: 46px; }
   .process-line::before, .process-progress { display: none; }
+}
+
+@media (max-width: 640px) {
+  .nav-actions { gap: 8px; }
+  #navOrderBtn { display: none; }
+  .nav-inner { padding: 14px 16px; }
+  .container { padding: 0 16px; }
 }
 
 @media (max-width: 768px) {
